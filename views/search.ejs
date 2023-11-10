@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/SearchPage.css">
+</head>
+<body>
+    <div class="render-songs">
+        <div class="diff">
+            <input id="srchsong" type="text" placeholder="Search Songs">
+            <input onclick="searchSong()" id="submt" value="Search" type="submit">
+        </div>
+        <div class="right">
+           
+        </div>
+    </div>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.1/axios.min.js" integrity="sha512-m9S8W3a9hhBHPFAbEIaG7J9P92dzcAWwM42VvJp5n1/M599ldK6Z2st2SfJGsX0QR4LfCVr681vyU5vW8d218w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        async function searchSong(){
+         const reasult = await axios.post('/search',{
+                Search:document.querySelector('input').value
+            })
+
+            let clutter=''
+            reasult.data.songs.forEach(song => {
+                clutter+= `
+                <div id="image" class="songCard" onclick="songCardClick('${song.fileName}','${song.title}', '/photo/${song.poster}',)">
+                    <img src="/photo/${song.poster}" alt="">
+                    <h5>${song.title}</h5>
+                    <p>${song.artist}</p>
+                    <p>${song.album}</p>
+                </div>
+                `
+            });
+            document.querySelector('.right').innerHTML+=clutter
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+*{
+margin: 0%;
+padding: 0%;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+box-sizing: border-box;
+}
+html,body{
+width: 100%;
+height: 100%;
+}
+.render-songs{
+    width: 100%;
+    height: 100%;
+    background-color: #999;
+}
+#srchsong{
+    margin-top: 10px;
+    width: 50%;
+    height: 7vh;
+    margin-left: 2%;
+    padding: 10px 40px;
+    border-radius: 20px;
+    background-color: rgb(136, 222, 6);
+    color: #101010;
+    border: 2px solid rgba(48, 42, 42, 0.456); 
+
+  }
+  #submt{
+    margin-top: 10px;
+    height: 7vh;
+    width:8%;
+    margin-left: 1%;
+    padding: 10px 40px;
+    border-radius: 20px;
+    background-color: rgb(136, 222, 6);
+    color: #101010;
+    border: 2px solid rgba(48, 42, 42, 0.456); 
+
+  }
+  .right{
+    padding: 15px;
+    width:100% ;
+    height:100%;
+    display: flex;
+    gap: 17px;
+  
+  }
+  .songCard{
+    padding: 10px;
+    width: 10%;
+    height: 35vh;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #2725256b;
+    color: white;
+    font-family: monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+  }
+  .songCard img{
+    width: 100%;
+    object-fit: cover;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    margin-bottom: 10px;
+  
+  }
+  .songCard h5,p {
+    margin-bottom: 6px;
+    padding: 0 10px;
+    max-width: 150px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 13px;
+  }

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Home Page</title>
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+    <div class="main">
+        <div class="left">
+            <div class="l1">
+                <img src="../images/Spotify.png" alt="">
+                <div class="home">
+                    <i class="ri-home-5-fill"></i>
+                    <h3>Home</h3>
+                </div>
+                <a class="search" href="/search">
+                    <i class="ri-search-2-line"></i>
+                    <h3>Search</h3>
+                </a>
+            </div>
+            <div class="l2">
+                <div class="r1">
+                    <i class="ri-disc-line"></i>
+                    <h3>Your Library</h3>
+                    <div class="add">
+                    <i class="ri-add-fill"></i>
+                    </div>
+                </div>
+                <div class="play-list">
+                    <button>Create Playlist🎶</button>
+                    <div class="all-playlist">
+                    <marquee id="slide" behavior="alternate" direction="">
+                        <h5>Heavy</h5>
+                    </marquee>
+                        <i class="ri-close-circle-line"></i>
+                    </div>
+                </div>
+            </div>
+            <a id="Loggout-btn" href="/logout">Loggout</a>
+        </div>
+        <div class="right">
+            <% userSongs.playlist[0].songs.forEach(song => { %>
+                <div id="image" class="songCard" onclick="songCardClick('<%= song.fileName %>','<%= song.title %>', '/photo/<%= song.poster %>',)">
+                    <img src="/photo/<%= song.poster %>" alt="">
+                    <i class="ri-play-circle-fill"></i>         
+                    <h5><%= song.title %></h5>
+                    <p><%= song.artist %></p>
+                    <p><%= song.album %></p>
+                </div>
+            <% }) %>
+        
+
+            <div class="music">
+                <div class="playingSong">
+                    <img src="/images/defMusic.png" alt="Not Avalible" id="currentSongPoster" >
+                    <div class="txt">
+                        <h5 id="currentSongTitle">Title</h5>
+                    </div>
+                </div>
+                <div class="play">
+                    <audio id="audio" controls ></audio>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+
+ 
+
+<script src="../javascripts/script.js"></script>
+ <script>
+var mus = document.querySelector(".music");
+document.querySelector(".songCard").addEventListener('click', () => {
+    mus.style.top = "80vh";
+});
+
+
+ </script>
+</body>
+</html>
