@@ -44,6 +44,7 @@ router.get('/uploadMusic',isLoggedIn, isAdmin,function(req, res, next) {
     res.render('uploadMusic');
 
 });
+
 // ======================================================(user register route) ============================================================================
 
 router.post('/register',async function(req, res, next){
@@ -185,5 +186,9 @@ router.post('/search',async function(req,res,next){
   res.json({
     songs: searchSong
   });
+})
+// ===========================================================================================================================================
+router.post("/CreatePlst",function(req,res,next){
+  
 })
 module.exports = router;

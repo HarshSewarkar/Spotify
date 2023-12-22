@@ -109,6 +109,14 @@
     height: 90%;
     overflow-y: scroll;
    }
+   .play-list #frm-playlist{
+    color: #16ff29;
+   }
+   .play-list #frm-playlist input{
+   padding: 10px;
+   border-radius: 50px;
+   margin: 10px 20%;
+   }
    .all-playlist{
     width: 90%;
     height:5vh;

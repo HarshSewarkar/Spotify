@@ -30,10 +30,14 @@
                     </div>
                 </div>
                 <div class="play-list">
-                    <button>Create Playlist🎶</button>
+                    <form id="frm-playlist" action="/CreatePlst" method="post">
+                        <input name="name" type="text" placeholder="Create Playlist">
+                        <input style="display: none;" type="submit">
+                    </form>
                     <div class="all-playlist">
+                                           
                     <marquee id="slide" behavior="alternate" direction="">
-                        <h5>Heavy</h5>
+                        <h5>heavy</h5>
                     </marquee>
                         <i class="ri-close-circle-line"></i>
                     </div>
